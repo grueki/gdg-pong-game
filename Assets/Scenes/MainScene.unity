@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 68807195}
   - component: {fileID: 68807194}
   m_Layer: 0
-  m_Name: Ball
+  m_Name: Izzy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
