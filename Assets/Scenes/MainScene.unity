@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 68807196}
   - component: {fileID: 68807195}
   - component: {fileID: 68807194}
+  - component: {fileID: 68807198}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -218,6 +219,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &68807198
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68807193}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &343907181
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,7 +769,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1335372806}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 7, z: 23.43}
+  m_LocalPosition: {x: 0, y: 4.4, z: 12.7}
   m_LocalScale: {x: 10, y: 7, z: 1}
   m_Children:
   - {fileID: 963194228}

@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     // }
 
     void OnCollisionEnter(Collision collision){
-        IncreaseScore();
+        score = IncreaseScore();
     }
 
     int IncreaseScore() {
