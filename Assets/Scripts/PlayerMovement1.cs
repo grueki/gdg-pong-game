@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement1 : MonoBehaviour
 {
     // Declare variables here
     int score;
@@ -15,23 +15,27 @@ public class PlayerMovement : MonoBehaviour
     } 
 
     // // Update is called once per frame
-    // void Update()
-    // {
+    void Update()
+    {
+        //Debug.Log(horizontal);
+        if(Input.GetAxis("P1_horizontal") != 0){
+            float horizontal1 = Input.GetAxis("P1_horizontal");
+            Vector3 positionP1 = transform.position;
+            positionP1.x = positionP1.x + 0.1f * horizontal1;
+            transform.position = positionP1; 
+        }
         
-    // }
+         
+    }
 
     void OnCollisionEnter(Collision collision){
         score = IncreaseScore();
     }
 
     int IncreaseScore() {
-        Debug.Log(score);
+        //Debug.Log(score);
         return score + 1;
     }
-
-    // [return type] FunctionName(parameter1, parameter 2, parameter...){
-    //  Code logic :)
-    // }
 }
 
 
