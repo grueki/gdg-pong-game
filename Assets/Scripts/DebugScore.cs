@@ -23,7 +23,8 @@ public class DebugScore : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        //nothing here
+        P1ScoreText.text = "Player 1 Score: " + P1Score.ToString();
+        P2ScoreText.text = "Player 2 Score: " + P2Score.ToString();
     }
 
     int IncreaseScore(int score) 
@@ -33,17 +34,15 @@ public class DebugScore : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision collision){
-        if (collision.gameObject.name == "Ball")
+        if (collision.gameObject.name == "Boundary1")
         {
-            if (name == "Player 1"){
-                P1Score = IncreaseScore(P1Score);
-                P1ScoreText.text = "Player 1 Score: " + P1Score.ToString();
-            }
-
-            if (name == "Player 2"){
-                P2Score = IncreaseScore(P2Score);
-                P2ScoreText.text = "Player 2 Score: " + P2Score.ToString();
-            }
+            Debug.Log("HELLOOOPLAYER1");
+            P2Score = IncreaseScore(P2Score);
+        }
+        if (collision.gameObject.name == "Boundary2")
+        {
+            Debug.Log("HELLOOOPLAYER2");
+            P1Score = IncreaseScore(P1Score);
         }
     }
 }
