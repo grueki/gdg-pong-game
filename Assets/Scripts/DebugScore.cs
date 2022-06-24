@@ -8,6 +8,9 @@ public class DebugScore : MonoBehaviour
     // Declare variables
     int P1Score = 0;
     int P2Score = 0;
+    public int maxScore = 3;
+
+    public bool GameFinished;
     
     [SerializeField]
     public Text P1ScoreText;
@@ -21,8 +24,12 @@ public class DebugScore : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Update()
+    void Update()
     {
+        bool GameFinished = (P1Score >= maxScore || P2Score >= maxScore);
+        if (GameFinished){
+            Debug.Log("Game over!");
+        }
     }
 
     int IncreaseScore(int score) 
@@ -31,16 +38,17 @@ public class DebugScore : MonoBehaviour
         return score;
     }
 
-    void OnCollisionEnter(Collision collision){
+    void OnCollisionEnter(Collision collision)
+    {
         if (collision.gameObject.name == "Boundary1")
         {
-            Debug.Log("Player 2 Scored...");
+            // Debug.Log("Player 2 Scored...");
             P2Score = IncreaseScore(P2Score);
             P2ScoreText.text = "Player 2 Score: " + P2Score.ToString();
         }
         if (collision.gameObject.name == "Boundary2")
         {
-            Debug.Log("Player 1 Scored...");
+            // Debug.Log("Player 1 Scored...");
             P1Score = IncreaseScore(P1Score);
             P1ScoreText.text = "Player 1 Score: " + P1Score.ToString();
         }

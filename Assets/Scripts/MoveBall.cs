@@ -12,7 +12,7 @@ public class MoveBall : MonoBehaviour
     void Start()
     {
         Debug.Log("Setting Ball Speed");
-        moveSpeedBall = 50f;
+        moveSpeedBall = 40f;
         Launch();
         StartPosition = transform.position;
     }
@@ -29,7 +29,7 @@ public class MoveBall : MonoBehaviour
     }
     private void Launch()
     {
-        float a = UnityEngine.Random.value * (2 * Mathf.PI) - 3 * (Mathf.PI)/2;
+        float a = (Random.Range(20, 160) * (Random.Range(0,2) * 2 - 1)) * Mathf.Deg2Rad;
         float x = Mathf.Cos(a);
         float z = Mathf.Sin(a);
         Vector3 directionVector = new Vector3(x, 5f, z);
@@ -43,7 +43,7 @@ public class MoveBall : MonoBehaviour
         transform.position = StartPosition;
     }
 
-     void OnCollisionEnter(Collision collision){
+    void OnCollisionEnter(Collision collision){
         if (collision.gameObject.name == "Boundary1")
         {
             Reset();
